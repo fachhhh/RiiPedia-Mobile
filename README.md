@@ -19,81 +19,120 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-## Checkpoint Tugas Individu 7
-### 1. Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
-Widget adalah komponen dasar yang digunakan untuk membangun antarmuka pengguna dalam pengembangan aplikasi menggunakan flutter.
-- **Stateless Widget**
-    - Stateless Widget adalah widget yang tidak memiliki state yang dapat berubah. Jika widget tersebut dibuat, maka widget tsb tidak akan berubah selama siklus hidupnya. Stateless Widget cocok digunakan untuk komponen antarmuka pengguna yang bersifat statis, atau yang kontennya tidak berubah berdasarkan aksi pengguna atau data eksternal yang berubah.
-- **Stateful Widget**
-    - Stateful Widget adalah widget yang memiliki state yang dapat berubah. Widget ini bisa merespons interaksi pengguna atau perubahan data yang terjadi, dan tampilan widget dapat diperbarui sesuai perubahan state tersebut. Setiap Stateful Widget memiliki kelas yang disebut **State**, yang menyimpan data atau informasi yang bisa berubah seiring waktu atau akibat interaksi pengguna.
-- **Perbedaan Dari Kedua Widget**
-    - Stateless *tidak mempunyai* state yang bisa menyimpan data atau informasi yang bisa berubah akibat interaksi pengguna. Namun, Statefull mempunyai hal tersebut.
-    - Untuk responsif terhadap perubahan, Statefull lebih unggul karena dapat berubah sesuai aksi yang dilakukan pengguna atau data baru. Sedangkan Stateless tidak berubah meski setelah dirender.
-    - Statefull dapat memanggil `build` secara berkali - kali pada perubahan state. Namun Stateless tidak bisa dan hanya satu kali pemanggilan saja.
-    - Biasanya Stateless digunakan saat ingin menampilkan teks statis, ikon, dekorasi visual yang tetap, dan lain - lain. Statefull biasanya digunakan saat ingin menampilkan tombol yang interaktif, form, input, animasi, daftar dinamis dan lain lain.
-### 2. Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.
-1. `MaterialApp`
-Digunakan sebagai root aplikasi yang mana berfungsi untuk menginisialisasi aplikasi dengan material design dan menyediakan berbagai pengaturan global, seperti theme dan home widget.
-2. `Scaffold`
-Scaffolf adalah struktur dasar layar dalam flutter, yang mana berfungsi untuk menyediakan struktur dasar layar utama. Contohnya seperti AppBar, Drawer, dan FloatingActionButton.
-3. `AppBar`
-AppBar digunakan untuk menunjukkan judul halaman dan bisa diisi dengan aksi lainnya, seperti ikon atau menu. Sama dengan NavBar pada website.
-4. `Text`
-Text digunakan untuk menampilkan teks di beberapa lokasi, seperti judul aplikasi di AppBar dan konten pada widget InfoCard. Teks menampilkannya secara statis.
-5. `Padding`
-Digunakan untuk memberikan jarak (padding) di sekitar widget lain.
-6. `Column`
-Digunakan untuk menata widget secara vertikal.
-7. `Row`
-Digunakan untuk menata widget secara horizontal.
-8. `InfoCard`
-InfoCard adalah widget custom yang dirancang untuk menampilkan informasi statis dalam bentuk kartu.
-9. `Card`
-Digunakan di InfoCard untuk memberikan gaya tampilan kartu pada informasi yang ditampilkan.
-10. `GestureDetector`
-Digunakan untuk menangani interaksi pengguna dengan widget, seperti mendeteksi ketika gambar diklik dan akan menampilkan SnackBar
-11. `Container`
-Digunakan untuk membuat kotak tampilan yang bisa diisi warna, ukuran, margin, atau padding tertentu.
-12. `ClipRRect`
-Digunakan di dalam Container yang membungkus gambar untuk memberikan efek sudut melingkar (rounded corners) pada gambar.
-13. `Image.network`
-Digunakan untuk menampilkan gambar dari URL.
-14. `GridView.count`
-Digunakan untuk menampilkan widget dalam bentuk grid (tata letak kotak-kotak).
-15. `ItemCard`
-ItemCard adalah widget custom untuk menampilkan tiap item dalam bentuk kartu dengan ikon dan teks.
-16. `Material`
-Digunakan sebagai pembungkus untuk InkWell, memberikan ripple effect saat kartu ditekan.
-17. `InkWell`
-Digunakan untuk mendeteksi aksi tekan (tap) pada kartu. Ini memungkinkan pengguna menekan ItemCard dan menampilkan pesan SnackBar.
-18. `SnackBar`
-Digunakan untuk menampilkan pesan pop-up sementara di bagian bawah layar ketika sebuah aksi terjadi.
+## Wiki for README.md Archieve
+- [Tugas individu 7](https://github.com/fachhhh/RiiPedia-Mobile/wiki/Archieve-Tugas-Individu-7-PBP)
 
-### 3. Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
-`setState()` adalah merupakan fungsi yang digunakan pada Stateful Widget untuk memberi tahu framework bahwa ada perubahan pada state widget, dan tampilan perlu diperbarui atau dirender ulang dengan nilai yang terbaru. Ketika fungsi tsb dipanggil Flutter akan menjalankan ulang metode `build()` pada widget tersebut, sehingga widget bisa mencerminkan perubahan data yang ada.\
-\
-Variabel yang bisa terdampak oleh setState() adalah variabel yang berada di dalam kelas state (State<T>) dari StatefulWidget. Contohnya seperti:
-- Variabel counter atau nilai hitungan
-- Data yang dinamis atau berubah berdasarkan interaksi pengguna
-- Status tampilan visual
-- Data yang diambil dari server
+## Checkpoint Tugas Individu 8
+### 1. Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?
+**Kegunaan `const` dalam flutter adalah**
+1. Optimalisasi Memory yang mana objek yang dideklarasikan sebagai `const` hanya akan dibuat satu kali dan disimpan di memori. Artinya saat suatu objek yang sama digunakan berulang ulang maka tidak perlu membuat objek baru lagi
+2. Immutability. Objek atau widget yang dideklarasikan dengan const tidak dapat diubah dan membuat aplikasi lebih stabil karena nilai dari objek tidak dimodifikasi.
+3. Efisiensi Build. Setiap kali ada perubahan pada UI maka tidak perlu di-rebuild setiap kali ada perubahan state atau saat UI diperbarui.
+**Keuntungan menggunakan `const` adalah**
+1. Peningkatan performa karena tidak perlu membuat objek baru setap kali ada perubahan.
+2. Mengurangi penggunaan memori karena objek hanya dibuat satu kali.
+3. Kode lebih stabil karena immutable.
 
-### 4. Jelaskan perbedaan antara const dengan final.
-`const` :
-- Waktu inisiasi = Harus diketahui pada waktu kompilasi
-- Immutable = Tidak dapat diubah
-- Penggunaan Umum = Nilai konstan seperti angka dan string
-- Konteks = Bisa digunakan untuk variabel dan objek kelas
+**Kapan Sebaiknya Menggunakan `const`**
+1. Widget Stateless yang Tidak Berubah
+2. Dalam Hierarki Widget yang Bersarang
+3. Variabel yang Didefinisikan Sekali
 
-`final` :
-- Waktu inisiasi = Dapat diinisialisasi saat runtime
-- Immutable = Tidak dapat diubah
-- Penggunaan Umum = Nilai yang tidak berubah setelah diinisialisasi, namun dapat dihitung pada runtime
-- Konteks = Biasanya untuk variabel di dalam metode atau kelas, tapi juga bisa di kelas global
+**Kapan Sebaiknya Tidak Menggunakan `const`**
+1. Pada Widget yang Menggunakan State atau Data yang Berubah
+2. Objek yang Dibuat Berdasarkan Perhitungan Runtime
 
-### 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.
-1. flutter create (nama file)
-2. Merapihkan `main.dart` dan membuat `menu.dart`
-3. Membuat beberapa class untuk fungsi dan tampilan pada `menu.dart` seperti `MyHomePage`, `InfoCard`, dan `ItemCard`.
-4. Membuat tombol untuk melihat daftar produk, menambahkan produk, dan logout didalam class `MyHomePage` dengan warna yang diambil dari ColorScheme pada class `MyApp` pada `main.dart`
-5. Memberikan fungsi kepada setiap tombol. Setiap dipencet akan memunculkan *SnackBar* yang didefinisikan di dalam class `ItemCard`
+### 2. Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+**Column**\
+Widget yang digunakan untuk menyusun widget secara vertikal (dari atas ke bawah). Setiap widget child di dalam Column akan ditumpuk dalam satu kolom.
+
+**Row**\
+Widget yang digunakan untuk menyusun widget secara horizontal (dari kiri ke kanan). Setiap widget child di dalam Row akan disusun secara berjajar dalam satu baris.
+
+**Perbedaan**
+- Arah Susunan
+    - Column digunakan Menyusun child secara vertikal.
+    - Row digunakan Menyusun child secara horizontal.
+- Fungsi `MainAxisAlignment` dan `CrossAxisAlignment`
+    - Pada Column, MainAxisAlignment mengatur tata letak vertikal, sedangkan CrossAxisAlignment mengatur posisi horizontal.
+    - Pada Row, MainAxisAlignment mengatur tata letak horizontal, sedangkan CrossAxisAlignment mengatur posisi vertikal.
+
+**Contoh Implementasi Row**
+```
+Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  crossAxisAlignment: CrossAxisAlignment.center,
+  children: <Widget>[
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.red,
+      child: Center(child: Text('Box 1')),
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.green,
+      child: Center(child: Text('Box 2')),
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.blue,
+      child: Center(child: Text('Box 3')),
+    ),
+  ],
+)
+```
+Pada contoh di atas, mainAxisAlignment diatur ke `MainAxisAlignment.center`, sehingga semua Container akan disusun di *tengah layar* secara **vertikal**. crossAxisAlignment diatur ke `CrossAxisAlignment.center`, sehingga setiap container diposisikan di *tengah layar* secara **horizontal**.
+
+**Contoh Implementasi Row**
+```
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  crossAxisAlignment: CrossAxisAlignment.center,
+  children: <Widget>[
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.red,
+      child: Center(child: Text('Box 1')),
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.green,
+      child: Center(child: Text('Box 2')),
+    ),
+    Container(
+      width: 100,
+      height: 100,
+      color: Colors.blue,
+      child: Center(child: Text('Box 3')),
+    ),
+  ],
+)
+```
+Pada contoh di atas, mainAxisAlignment diatur ke `MainAxisAlignment.spaceEvenly`, yang memberikan *jarak yang merata* di antara setiap container. crossAxisAlignment diatur ke `CrossAxisAlignment.center`, sehingga setiap container akan *ditempatkan di tengah* secara **vertikal**.
+
+### 3. Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+Untuk di tugas ini saya hanya baru menggunakan `TextFormField` saja karena kebutuhan untuk menambahkan produk pada aplikasi E-Commerce. `TextFormField` berguna untuk mengumpulkan input teks dari pengguna, seperti nama produk, deskripsi, atau harga barang. Selain `TextFormField`, masih ada beberapa elemen input seperti:
+- `Checkbox`: Digunakan untuk pilihan ya/tidak atau setuju/tidak setuju, seperti pada syarat dan ketentuan.
+- `Radio`: Digunakan untuk pilihan tunggal di antara beberapa opsi, misalnya jenis kelamin (Laki-laki/Perempuan).
+- `DropdownButtonFormField`: Untuk pilihan yang memiliki banyak opsi tetapi hanya satu yang bisa dipilih pada satu waktu. Ini sangat berguna untuk input seperti negara atau kota.
+- `Slider`: Digunakan untuk mengatur nilai dalam rentang tertentu, misalnya mengatur level volume atau umur.
+- `Switch`: Digunakan untuk pilihan hidup/mati, seperti mengaktifkan atau menonaktifkan notifikasi.
+- `DatePicker`: Untuk input tanggal, memungkinkan pengguna memilih tanggal tertentu, misalnya tanggal lahir.
+- `TimePicker`: Untuk input waktu, memungkinkan pengguna memilih waktu, misalnya untuk janji atau pengingat.
+
+### 4. Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+Dalam tugas ini saya mengatur tema secara keseluruhan pada file [main.dart](https://github.com/fachhhh/RiiPedia-Mobile/blob/main/lib/main.dart) dengan menggunakan `MaterialApp` dan `Theme`. ThemeData dapat digunakan untuk menentukan tema aplikasi secara global di setiap widget yang di implementasikan.
+
+### 5. Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
+Terdapat 3 Method `Navigator` yang sudah disediakan flutter untuk digunakan.
+- **Navigator.push**
+    - Method `push()` digunakan untuk menambahkan suatu route ke dalam stack route yang dikelola oleh navigator. Route yang ditambahkan akan menjadi route yang aktif setelah method ini dipanggil.
+- **Navigator.pop**
+    - Method `pop()` digunakan untuk menghapus route yang aktif dari stack route yang dikelola oleh navigator. Jika tidak ada route lain di bawahnya, maka aplikasi akan kembali ke halaman utama.
+- **Navigator.pushReplacement**
+    - Method `pushReplacement()` digunakan untuk mengganti route yang aktif dengan route baru. Route baru akan menjadi route yang aktif setelah method ini dipanggil.
