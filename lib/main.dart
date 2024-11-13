@@ -1,6 +1,6 @@
 // main.dart
 import 'package:flutter/material.dart';
-import 'package:riipedia_mobile/menu.dart';
+import 'package:riipedia_mobile/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
