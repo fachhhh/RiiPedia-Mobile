@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:riipedia_mobile/widgets/left_drawer.dart';
-import 'package:riipedia_mobile/screens/menu.dart';
+import 'package:riipedia_mobile/screens/menu.dart' hide LeftDrawer;
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 
