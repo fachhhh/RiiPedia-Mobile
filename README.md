@@ -36,6 +36,13 @@ Ada Beberapa alasan mengapa kita perlu membuat model:
 Jika kita tidak membuat model, sebenarnya tidak selalu error meski ada beberapa resiko error yang mungkin terjadi seperti Inkompatibilitas Format Data yang mana tidak bisa memproses jika struktur data json tidak konsisten. Lalu ada kesalahan parsing yang mana data json tidak sesuai ekspektasi. Kemudian bisa juga terjadi data yang diterima atau dikirim tidak sesuai. Dalam pov programmer, akan sulit untuk memantain proyek skala besar dalam hal debugging atau yang lain.
 
 ### 2. Jelaskan fungsi dari library http yang sudah kamu implementasikan pada tugas ini
+1. Melakukan Permintaan HTTP (GET, POST)
+2. Menerima dan Mengelola Respon HTTP
+3. Manajemen Header dan Data
+4. Mendukung Operasi Synchronous dan Asynchronous
+5. Mendukung Protokol Tambahan
+6. Membantu Debugging dan Logging
+
 ### 3. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
 CookieRequest adalah sebuah objek atau utilitas yang bertugas menangani pengambilan dan penyimpanan cookie dari server. CookieRequest digunakan juga untuk menyisipkan cookie ke dalam setiap permintaan HTTP (GET/POST) yang membutuhkan autentukasi berbasis cookie. Lalu dapat mempermudah pengelolaan state session pengguna dalam aplikasi.
 
@@ -109,4 +116,6 @@ Mengapa Instance CookieRequest Perlu Dibagikan ke Semua Komponen?
     Flutter dapat mengirim permintaan ke Django untuk mencabut token (opsional).\
     Endpoint Logout (Opsional): Django menerima permintaan untuk mencabut token.\
     Hapus Token: Django menghapus token dari database atau menandainya sebagai tidak valid.
+    
 ### 6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
+1. menambahkan file login.dart untuk login, register.dart untuk regist, dan list_productentry untuk liat daftar produk
