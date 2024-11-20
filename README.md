@@ -119,3 +119,4 @@ Mengapa Instance CookieRequest Perlu Dibagikan ke Semua Komponen?
     
 ### 6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
 1. menambahkan file login.dart untuk login, register.dart untuk regist, dan list_productentry untuk liat daftar produk
+2. Hubungkan dengan Django
