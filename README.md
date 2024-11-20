@@ -23,7 +23,7 @@ samples, guidance on mobile development, and a full API reference.
 - [Tugas individu 7](https://github.com/fachhhh/RiiPedia-Mobile/wiki/Archieve-Tugas-Individu-7-PBP)
 - [Tugas individu 8](https://github.com/fachhhh/RiiPedia-Mobile/wiki/Archieve-Tugas-Individu-8-PBP)
 
-## Checkpoint Tugas Individu 8
+## Checkpoint Tugas Individu 9
 ### 1. Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?
 Ada Beberapa alasan mengapa kita perlu membuat model:
 - Struktur dan validasi data\
